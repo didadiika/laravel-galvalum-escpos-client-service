@@ -115,7 +115,11 @@ if(count($data->printers) > 0){
                         $no = 0;
                         foreach($data->carts as $cart){
                             $no++;
-                                $item = substr(ucwords(strtolower($cart->product->name)),0,$max_width - $max_qty - $space_between_qty_item);#12
+                                $multiplier = '';
+                                if($cart->multiplier > 0){
+                                    $multiplier = $cart->multiplier.'M ';
+                                }
+                                $item = substr(ucwords(strtolower($multiplier.$cart->product->name)),0,$max_width - $max_qty - $space_between_qty_item);#12
                                 $qty = $cart->qty;#1
                                 $note = $cart->note;
                                 $price = uang((int) $cart->price_after_disc);#6
@@ -233,7 +237,11 @@ if(count($data->printers) > 0){
                         $no = 0;
                         foreach($data->carts as $cart){
                             $no++;
-                                $item = substr(ucwords(strtolower($cart->product->name)),0,$max_width - $max_qty - $space_between_qty_item);#12
+                                $multiplier = '';
+                                if($cart->multiplier > 0){
+                                    $multiplier = $cart->multiplier.'M ';
+                                }
+                                $item = substr(ucwords(strtolower($multiplier.$cart->product->name)),0,$max_width - $max_qty - $space_between_qty_item);#12
                                 $qty = $cart->qty;#1
                                 $note = $cart->note;
                                 
@@ -307,7 +315,11 @@ if(count($data->printers) > 0){
                                     
                                     foreach($category->orders as $order){
                                     $no++;
-                                        $product_name = ucwords(strtolower($order->product_name));#12
+                                        $multiplier = '';
+                                        if($order->multiplier > 0){
+                                            $multiplier = $order->multiplier.'M ';
+                                        }
+                                        $product_name = ucwords(strtolower($multiplier.$order->product_name));#12
                                         $qty = $order->qty;#1
                                         $note = $order->note;#6
                                         
