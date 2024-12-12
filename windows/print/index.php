@@ -316,7 +316,7 @@ if(count($data->printers) > 0){
                                     foreach($category->orders as $order){
                                     $no++;
                                         $multiplier = '';
-                                        if($order->multiplier > 0){
+                                        if($order->multiplier > 1){
                                             $multiplier = $order->multiplier.'M ';
                                         }
                                         $product_name = ucwords(strtolower($multiplier.$order->product_name));#12
