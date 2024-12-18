@@ -96,6 +96,7 @@ if(count($data->printers) > 0){
                         $print->text("Tanggal  : ".substr($data->receipt->date,0,$max_width - 11)."\n");
                         $print->text("Kasir    : ".substr($data->receipt->cashier->name,0,$max_width - 11)."\n");
                         $print->text("Sales    : ".substr($data->receipt->sales_name,0,$max_width - 11)."\n");
+                        $print->text("Metode   : ".substr($data->receipt->payment_method,0,$max_width - 11)."\n");
 
                         $print -> setJustification(Printer::JUSTIFY_LEFT);
                         
