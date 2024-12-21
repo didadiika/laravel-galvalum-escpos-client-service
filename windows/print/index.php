@@ -116,7 +116,7 @@ if(count($data->printers) > 0){
                         foreach($data->carts as $cart){
                             $no++;
                                 $multiplier = '';
-                                if($cart->multiplier > 0){
+                                if($cart->multiplier > 1){
                                     $multiplier = $cart->multiplier.'M ';
                                 }
                                 $item = substr(ucwords(strtolower($multiplier.$cart->product->name)),0,$max_width - $max_qty - $space_between_qty_item);#12
