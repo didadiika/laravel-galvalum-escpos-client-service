@@ -81,6 +81,7 @@ if(count($data->printers) > 0){
                         $print->text($data->store->address."\n");
                         $print->text($data->store->city."\n");
                         $print->text($data->store->phone."\n");
+                        $print->setEmphasis(false);
 
                         $print->selectPrintMode(Printer::MODE_FONT_A | Printer::MODE_DOUBLE_HEIGHT | Printer::MODE_DOUBLE_WIDTH);
                         $print->feed(1);
@@ -88,7 +89,6 @@ if(count($data->printers) > 0){
                         $print -> text("NOTA BAYAR PIUTANG\n");
                         $print -> setTextSize(1, 1);
                         $print -> text(str_repeat('=',$max_width)."\n");
-                        $print->setEmphasis(true);//berguna mempertebal huruf
                         $print -> setJustification(Printer::JUSTIFY_LEFT);
                         $customer_name = ($data->receipt->customer->is_default == true) ? $data->receipt->customer_alias : $data->receipt->customer->name;
                         $print->text("UID      : ".substr($data->receipt->payment_uid,0,$max_width - 11)."\n");
